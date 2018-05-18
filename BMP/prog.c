@@ -12,7 +12,7 @@ int main ()
     scanf ("%d %d", &linha, &coluna);
 
     mat = (int **)malloc(coluna*sizeof(int*));
-    for (i=0; i<coluna; i++)
+    for (i=0; i<linha; i++)
     {
         mat[i] = (int *)malloc(coluna*sizeof(int));
     }
