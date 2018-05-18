@@ -6,7 +6,8 @@
 #pragma pack(1)
 
 /*---------------------------------------------------------------------*/
-struct cabecalho {
+struct cabecalho 
+{
 	unsigned short tipo;
 	unsigned int tamanho_arquivo;
 	unsigned short reservado1;
@@ -26,7 +27,8 @@ struct cabecalho {
 }; 
 typedef struct cabecalho CABECALHO;
 
-struct pixel{
+struct pixel
+{
 	unsigned char B;
 	unsigned char G;
 	unsigned char R;
@@ -35,7 +37,8 @@ struct pixel{
 typedef struct pixel PIXEL;
 
 /*---------------------------------------------------------------------*/
-CABECALHO le_cabecalho_arquivo(char entrada[N]){
+CABECALHO le_cabecalho_arquivo(char entrada[N])
+{
 
 	CABECALHO cabecalho;
 
@@ -158,7 +161,7 @@ int main(int argc, char **argv ){
     converteTonsCinza(matriz, cabecalho.altura, cabecalho.largura);
     //binarizarImagem <- implementar (Otsu ou K-Means)
     gravaArquivoBMP(cabecalho, matriz, argv[2]);
-    //desalocaMatriz(matriz, cabecalho.largura); //não funciona adequadamente
+    desalocaMatriz(matriz, cabecalho.altura); //não funciona adequadamente
     /* fim código adicionado em 17/05. */
 
     //status:
@@ -173,4 +176,3 @@ int main(int argc, char **argv ){
 
 }
 /*---------------------------------------------------------------------*/
-
